@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        {% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/feed.css') }}" />
+        {% endblock %}
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap');
+        </style>
+        <title>Cámara {{id}}</title>
+    </head>
+    <body>
+        <div class="background">
+            <div class="botones">
+                <a class="livebutton" id="liveButton" onclick="live()">En Vivo</a> 
+                <a class="backbutton" href="{{ url_for('index') }}">Volver</a> 
+            </div>
+            <div class="data">
+                <div class="title">Cámara {{ id }}</div>
+                <div id="video_div" class="status" style="display:none;">
+                    <div class="video">
+                        <video id="video" preload="auto" width="960" height="540" autoplay muted loop>
+                        </video>
+                    </div>
+                    <div class="semaforo">
+                        <img id="semaforo" src="{{ url_for('static', filename='img/semaforo_verde.png') }}" width="300" height="500" />
+                    </div>
+                </div>
+                <div id="loader" class="central_text"> 
+                    <p>Cargando datos del modelo...</p>
+                    <p><div class="spinner"></div></p>
+                </div>
+                <div id="semaforo_filter" style="display:none;">
+                    <a id="semaforoFilterButton" class='verButton' style="border: 3px white solid; margin: 10px;" onclick="toggleSemaforoFilter()">Filtrar luz roja</a>
+                </div> 
+                <table id="resultTable" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Foto</th>
+                            <th>Marco</th>
+                            <th>Patente</th>
+                            <th>Semaforo</th>
+                            <th>Ver suceso</th>
+                        </tr>
+                    </thead>
+                    <tbody id="resultBody"></tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            window.feed_id ="{{ id }}"
+            const SEMAFORO_VERDE_URL = "{{ url_for('static', filename='img/semaforo_verde.png') }}";
+            const SEMAFORO_ROJO_URL = "{{ url_for('static', filename='img/semaforo_rojo.png') }}";
+        </script>
+        <script src="{{ url_for('static', filename='js/feed.js') }}"></script>
+    </body>
+</html>

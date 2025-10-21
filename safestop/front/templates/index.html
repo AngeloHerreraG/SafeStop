@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width , initial-scale=1">
+        {% block css %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" />
+        {% endblock %}
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Chiron+Hei+HK:ital,wght@0,200..900;1,200..900&display=swap');
+        </style>
+        <title>Index</title>
+    </head>
+    <body>
+        <div class="background">
+            <div class="title">
+                <a class="safe">Safe</a><a class="stop">stop</a>
+            </div>
+            <div class="button-box">
+                {% for i in feedData %}
+                    <div class="button-group">
+                        <div class="buttonDiv" onclick="window.location.href = '{{ url_for('feed', num=i) }}';">
+                            <a class="button">Cámara {{ i }}</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="pilar">
+                .
+            </div>
+        </div>
+        {% if reset %}
+            <p id='reseted' style="display: none; visibility: hidden;"></p>
+            <div id="resetModal" class="modal">
+                <div class="modal-content">
+                    <p>¿Estás seguro que quieres reiniciar los datos?</p>
+                    <input class="modal-input" id="passwordInput" autocomplete="off" placeholder="Contraseña">
+                    <div class="modal-buttons">
+                        <button id="confirmReset" class="modal-btn si">Sí</button>
+                        <button id="cancelReset" class="modal-btn no">No</button>
+                    </div>
+                    <p id="errorMsg" style="color: red; display: none; margin-top: 10px;">Contraseña incorrecta</p>
+                    <p id="successMsg" style="color: seagreen; display: none;">Datos reiniciados correctamente</p>
+                </div>
+            </div>
+        {% endif %}
+        <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    </body>
+</html>

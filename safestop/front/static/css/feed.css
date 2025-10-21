@@ -1,0 +1,231 @@
+body {
+    color: white;
+    font-family: "Chiron Hei HK", sans-serif;
+}
+.background{
+    width:100%;
+    height:100%;
+}
+.background::before {
+    content:"";
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-image: url("/safestop/front/static/img/feed.jpg");
+    background-size:cover;
+    z-index:-1;
+    filter: brightness(60%) blur(4px);
+}
+.data{
+    text-align: center;
+}
+.title{
+    font-size: 120px;
+    padding-bottom: 40px;
+    font-weight: 700;
+    /* -webkit-text-stroke: seagreen 2px; */
+    background: rgba(0,0,0,1%);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.status{
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 10px;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.semaforo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+}
+.semaforo img{
+    image-rendering: smooth;
+}
+.video{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    border:solid grey;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 20px;
+}
+table{
+    padding: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+}
+tr{
+    cursor: auto;
+}
+th, td {
+    border:1px solid white;
+    border-collapse: collapse;
+    font-size: 30px;
+    width: auto;
+    max-width: 100%;
+    padding: 10px;
+}
+
+/* Y los bordes redondeados */
+table thead th:first-child {
+    border-top-left-radius: 15px;
+}
+table thead th:last-child {
+    border-top-right-radius: 15px;
+}
+table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 15px;
+}
+table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+}
+
+.error{
+    font-size: 80px;
+}
+.central_text{
+    font-size: 80px;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.verButton{
+    font-size: 40px;
+    color:#ffffff;
+    border-collapse: collapse;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+.verButton.verde {
+    background-color: rgba(46,139,87,0.5);
+    border: rgba(46,139,87,1) solid 3px;
+}
+.verButton.rojo {
+    background-color: rgba(150,0,0,0.5);
+    border: rgba(150,0,0,1) solid 3px;
+}
+a.verButton:hover{
+    background-color: rgb(200,200,0);
+    cursor: pointer;
+}
+a.verButton:active{
+    background-color: rgb(150,0,0);
+}
+.botones {
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.backbutton{
+    font-size: 40px;
+    background: seagreen;
+    color:#ffffff;
+    border:outset rgba(158, 255, 158, 0.44);
+    border-collapse: collapse;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+.livebutton{
+    font-size: 40px;
+    background: seagreen;
+    color:#ffffff;
+    border:outset rgba(158, 255, 158, 0.44);
+    border-collapse: collapse;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    visibility: hidden;
+    padding: 5px;
+    border-radius: 10px;
+}
+.spinner {
+    border: 8px solid #f3f3f3; 
+    border-top: 8px solid seagreen; 
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+a.livebutton:hover{
+    background-color: rgb(200,200,0);
+    cursor: pointer;
+}
+a.livebutton:active{
+    background-color: rgb(150,0,0);
+}
+td.clickable:hover{
+    cursor: pointer;
+    color: rgb(255,255,0);
+    text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
+}
+td.clickable:active{
+    cursor: pointer;
+    color: rgb(255,0,0);
+    text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
+}
+a.backbutton:hover{
+    background-color: rgb(200,200,0);
+    cursor: pointer;
+}
+a.backbutton:active{
+    background-color: rgb(150,0,0);
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px grey;
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    box-shadow: lawngreen;
+    background: seagreen;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(200,200,0);
+}
+::-webkit-scrollbar-thumb:active {
+    background: rgb(150,0,0);
+}
+::selection {
+    color: rgba(200,200,0,1);
+    background: seagreen;
+}

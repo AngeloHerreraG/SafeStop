@@ -1,0 +1,18 @@
+network_params:
+  input_channel: 1
+  output_channel: 512
+  hidden_size: 256
+  imgH: 64
+  imgW: 200
+  Transformation: 'None'
+  FeatureExtraction: 'VGG'
+  SequenceModeling: 'BiLSTM'
+  Prediction: 'CTC'
+  num_fiducial: 20
+  batch_max_length: 6
+
+imgH: 64
+imgW: 200
+lang_list:
+  - 'en'
+character_list: 0123456789abcdefghijklmnopqrstuvwxyz
