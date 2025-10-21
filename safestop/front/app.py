@@ -2,8 +2,7 @@
 from flask import Flask
 
 # Constantes para hacer la llamada a la IA con un request POST
-IA_SERVER = 'http://172.17.69.228:9002'
-# IA_SERVER = 'http://localhost:9002'
+IA_SERVER = 'http://localhost:9002'
 
 IA_URL = '/safestop/ia/predict'
 UPLOAD_FOLDER = 'static/'

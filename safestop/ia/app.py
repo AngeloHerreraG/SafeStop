@@ -5,8 +5,7 @@ import easyocr
 import torch
 import os
 
-IA_SERVER = 'http://gate.dcc.uchile.cl:8632'
-# IA_SERVER = 'http://localhost:9001'
+IA_SERVER = 'http://localhost:9001'
 
 IA_URL = '/safestop/front/upload-image'
 
